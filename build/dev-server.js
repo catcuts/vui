@@ -1,3 +1,6 @@
+// 这里用 express 搭建（开启）一个 dev-server 用于调试
+// 用法： npm script dev
+
 require('./check-versions')()
 
 var config = require('../config')
