@@ -1,4 +1,5 @@
 ////////////////////////////////////////////////////////////////
+// 参考：
 // 1.  [Node.js 中 require() 如何解析模块](http://nodejs.cn/api/modules.html#modules_file_modules)
 // 2.  [为什么要用 copy-webpack-plugin ？]()见同名印象笔记  
 // 3.  [Node.js 全局变量 __dirname 和 __fielname](http://nodejs.cn/api/globals.html#globals_dirname)
@@ -111,8 +112,8 @@ var webpackConfig = merge(baseWebpackConfig, {
     //////// plugins - 6 /////////
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module, count) {
+      name: 'vendor', // 仅设置 name 的话，需要在 entry 中指定 vendor: 'some/vendeor/file.js'
+      minChunks: function (module, count) { // 这里只有 node_modues 内的代码会被提取到公共 vendor bundle 中
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&

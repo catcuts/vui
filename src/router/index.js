@@ -1,15 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
+import Paginator from '@/components/Paginator'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/Hello',
       name: 'Hello',
       component: Hello
+    },
+    {
+      path: '/Paginator',
+      name: 'Paginator',
+      component: Paginator
     }
   ]
 })

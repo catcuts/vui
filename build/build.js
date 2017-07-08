@@ -1,4 +1,4 @@
-// 构建： npm script build
+// 构建： npm run build
 
 require('./check-versions')()
 
