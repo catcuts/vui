@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ui center-aligned segment">
+    <div class="ui content-centered segment">
 			<span>123</span>
 		</div>
   </div>
@@ -87,20 +87,5 @@ export default {
 </script>   
 
 <style scoped>
-	.ui.segment.center-aligned > span,
-	.ui.segment.center-aligned > p,
-	.ui.segment.center-aligned > h1,
-	.ui.segment.center-aligned > h2,
-	.ui.segment.center-aligned > h3,
-	.ui.segment.center-aligned > h4,
-	.ui.segment.center-aligned > h5,
-	.ui.segment.center-aligned > h6 { /* 可使用 cssnext custom-selector 来简化 */
-		margin: auto;
-  	position: absolute;
-		left: 0; 
-		right: 0;
-	}
-	.test {
-		transform:rotate(1.2deg);
-	}
+  
 </style>

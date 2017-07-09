@@ -28,7 +28,7 @@ exports.cssLoaders = function (options) {
       loaders.push({
         loader: loader + '-loader',
         options: Object.assign({}, loaderOptions, {
-          sourceMap: options.sourceMap
+          sourceMap: options.sourceMap // 这些 *-loader 都可以设置 sourceMap 选项
         })
       })
     }
@@ -41,14 +41,16 @@ exports.cssLoaders = function (options) {
         fallback: 'vue-style-loader'
       })
     } else {
-      return ['vue-style-loader'].concat(loaders)
-    }
+      return ['vue-style-loader'].concat(loaders) // 每个 样式-loader 都要加上 vue-style-loader，
+    }                                             // 因为 v-s-l 要先把组件样式处理成这些 样式-loader 能处理的格式
   }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
-    postcss: generateLoaders(),
+    postcss: generateLoaders(), // postcss 插件配置在 .postcssrc.js 。另见 https://github.com/michael-ciniawsky/postcss-load-config
+                                // https://github.com/postcss/postcss-loader
+                                // 如果要使用 postcss-cssnext 除了更新 .postcssrc.js 还需 npm install postcss-cssnext
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
