@@ -22,23 +22,3 @@ export default {
   margin-top: 60px;
 }
 </style>
-
-<style>
-/* custom properties */
-:root {
-  --content-centered: {
-    margin: auto;
-    position: absolute;
-    left: 0; 
-    right: 0;
-  };
-}
-
-/* custom selectors */
-@custom-selector :--heading h1, h2, h3, h4, h5, h6;
-
-/* custom styles */
-.content-centered :--heading >  { 
-  @apply --content-centered;
-}
-</style>
