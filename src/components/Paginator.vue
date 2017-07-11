@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ui content-centered segment">
+    <div class="ui content-centered square segment">
 			<span>123</span>
 		</div>
   </div>
@@ -87,5 +87,9 @@ export default {
 </script>   
 
 <style scoped>
-  
+  .square {
+    width: .5em;
+    height: .5em;
+    font-size: 1em;
+  }
 </style>

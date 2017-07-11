@@ -3,7 +3,7 @@
 module.exports = {
   "plugins": {
     // to edit target browsers: use "browserlist" field in package.json
-    "autoprefixer": {},
+    // "autoprefixer": {}, // postcss-cssnext 已经包含了 autoprefixer
     "postcss-cssnext": {},
   }
 }
