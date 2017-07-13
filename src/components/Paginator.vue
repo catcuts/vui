@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div v-if="totalPageNo > 0">
     <div class="ui content-centered square segment">
-			<span>123</span>
+			<p>123456</p>
+      <p>123456</p>
 		</div>
   </div>
 </template>
@@ -88,8 +89,8 @@ export default {
 
 <style scoped>
   .square {
-    width: .5em;
+    width: .5em; /* 控制盒子宽高，字体大小不变 */
     height: .5em;
-    font-size: 1em;
+    font-size: 1em; /* 控制字体大小，盒子宽高自适应 */
   }
 </style>
