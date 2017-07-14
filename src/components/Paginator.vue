@@ -1,9 +1,14 @@
 <template>
-  <div v-if="totalPageNo > 0">
-    <div class="ui content-centered square segment">
-			<p>123456</p>
-      <p>123456</p>
+  <div v-if="totalPageNo > 0" class="squares container">
+    <div class="ui square segment"><span>{{ "<<" }}</span></div>
+    <div class="ui square segment"><span>{{ "<" }}</span></div>
+    <div class="ui square segment"
+      v-for="pageNo in totalPageNo" :key="pageNo"
+    >
+			<span>{{ pageNo }}</span>
 		</div>
+    <div class="ui square segment"><span>{{ ">" }}</span></div>
+    <div class="ui square segment"><span>{{ ">>" }}</span></div>
   </div>
 </template>
 
@@ -14,7 +19,7 @@ export default {
   data () {
     return {
       page: 1,
-      totalPageNo: 1,
+      totalPageNo: 10,
       veryLeftPageNo: 1,
       pageSize: 10
     }
@@ -88,9 +93,17 @@ export default {
 </script>   
 
 <style scoped>
+  /* 专用 */
+  .container {
+    margin: 0 auto;
+  }
+  /* 覆盖 */
   .square {
-    width: .5em; /* 控制盒子宽高，字体大小不变 */
-    height: .5em;
-    font-size: 1em; /* 控制字体大小，盒子宽高自适应 */
+    display: inline-block;
+    font-size: 1em!important;
+  }
+  /* 测试 */
+  .test {
+    margin: 0 auto;
   }
 </style>
