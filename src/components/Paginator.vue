@@ -1,9 +1,10 @@
 <template>
-  <div v-if="totalPageNo > 0" class="squares container">
+  <div v-if="totalPageNo > 0" class="squares container" @click="onSquareClick($event)">
     <div class="ui square segment"><span>{{ "<<" }}</span></div>
     <div class="ui square segment"><span>{{ "<" }}</span></div>
     <div class="ui square segment"
       v-for="pageNo in totalPageNo" :key="pageNo"
+      :class="{ 'current': pageNo === 1 }"
     >
 			<span>{{ pageNo }}</span>
 		</div>
@@ -29,6 +30,10 @@ export default {
   },
   computed: {},
   methods: {
+    onSquareClick ($event) {
+      debugger
+      console.log($event)
+    },
     // 翻页器方法
     // 方法1：上滚页
     rollupPage () {
@@ -101,6 +106,7 @@ export default {
   .square {
     display: inline-block;
     font-size: 1em!important;
+    cursor: pointer;
   }
   /* 测试 */
   .test {
